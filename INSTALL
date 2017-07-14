@@ -1,0 +1,9 @@
+Building Growers
+
+See doc/readme-qt.rst for instructions on building Growers QT,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of Growers.
+
+See doc/build-*.txt for instructions on building growersd,
+the intended-for-services, no-graphical-interface, reference
+implementation of Growers.
