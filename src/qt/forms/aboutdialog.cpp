@@ -132,7 +132,7 @@ color: rgb(255, 255, 255);</string>
                <string notr="true">QLabel { color: rgb(255, 255, 255); background: transparent; }</string>
               </property>
               <property name="text">
-               <string notr="true">0 GRW</string>
+               <string notr="true">0 NPK</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -171,7 +171,7 @@ color: rgb(255, 255, 255);</string>
                <string notr="true">QLabel { color: rgb(255, 255, 255); background: transparent; }</string>
               </property>
               <property name="text">
-               <string notr="true">0 GRW</string>
+               <string notr="true">0 NPK</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -218,7 +218,7 @@ color: rgb(255, 255, 255);</string>
                <string notr="true">QLabel { color: rgb(255, 255, 255); background: transparent; }</string>
               </property>
               <property name="text">
-               <string notr="true">0 GRW</string>
+               <string notr="true">0 NPK</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -264,7 +264,7 @@ color: rgb(255, 255, 255);</string>
                <string notr="true">QLabel { color: rgb(255, 255, 255); background: transparent; }</string>
               </property>
               <property name="text">
-               <string notr="true">0 GRW</string>
+               <string notr="true">0 NPK</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -292,7 +292,7 @@ color: rgb(255, 255, 255);</string>
                <string notr="true">QLabel { color: rgb(255, 255, 255); background: transparent; }</string>
               </property>
               <property name="text">
-               <string notr="true">0 GRW</string>
+               <string notr="true">0 NPK</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
