@@ -1727,8 +1727,8 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
         <location line="+86"/>
         <location line="+86"/>
         <location line="+32"/>
-        <source>0.00 NPK</source>
-        <translation>123.456 NPK {0.00 ?}</translation>
+        <source>0.00 GRWI</source>
+        <translation>123.456 GRWI {0.00 ?}</translation>
     </message>
     <message>
         <location line="-191"/>
@@ -1797,8 +1797,8 @@ En aquest cas es requereix una comisió d&apos;almenys 2%.</translation>
     </message>
     <message>
         <location line="+16"/>
-        <source>123.456 NPK</source>
-        <translation>123.456 NPK</translation>
+        <source>123.456 GRWI</source>
+        <translation>123.456 GRWI</translation>
     </message>
     <message>
         <location line="+31"/>
