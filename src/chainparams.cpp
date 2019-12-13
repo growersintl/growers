@@ -76,9 +76,10 @@ public:
         assert(hashGenesisBlock == uint256("0x000007fc46103d2d2f04604cbb3441acf7949dfdc6bfca4ebe9f4eafc4a71cf6"));
         assert(genesis.hashMerkleRoot == uint256("0x82606100037de63574c1c39a64880b1bfcef3170d38b663227b86fef515763ce"));
 
-        vSeeds.push_back(CDNSSeedData("45.55.4.192", "45.55.4.192"));
-        vSeeds.push_back(CDNSSeedData("104.236.78.83", "104.236.78.83"));
-        vSeeds.push_back(CDNSSeedData("104.236.120.44", "104.236.120.44"));
+        vSeeds.push_back(CDNSSeedData("GRWI main seeds", "growerscoin-seeds.grwi.io"));
+        vSeeds.push_back(CDNSSeedData("GRWI seed 1", "growerscoin-s1.grwi.io"));
+        vSeeds.push_back(CDNSSeedData("GRWI seed 2", "growerscoin-s2.grwi.io"));
+        vSeeds.push_back(CDNSSeedData("BCF seed 1", "growerscoin-bcf-seed.grwi.io"));
 
         base58Prefixes[PUBKEY_ADDRESS] = list_of(38);
         base58Prefixes[SCRIPT_ADDRESS] = list_of(132);
