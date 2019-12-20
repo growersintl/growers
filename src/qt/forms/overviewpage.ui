@@ -322,30 +322,6 @@ color: rgb(255, 255, 255);</string>
          </property>
         </spacer>
        </item>
-       <item>
-        <widget class="QWebView" name="webView_2">
-         <property name="minimumSize">
-          <size>
-           <width>380</width>
-           <height>300</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true"> background: transparent;</string>
-         </property>
-         <property name="url">
-          <url>
-           <string>http://growersintl.com/twitterwidget.html</string>
-          </url>
-         </property>
-        </widget>
-       </item>
       </layout>
      </item>
      <item>
