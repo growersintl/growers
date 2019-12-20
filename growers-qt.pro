@@ -9,9 +9,8 @@ CONFIG += thread
 #CONFIG += debug
 CONFIG += release
 
-QT += network webkit
+QT += network
 greaterThan(QT_MAJOR_VERSION, 4) {
-    QT += webkitwidgets
     DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0
 }
 
