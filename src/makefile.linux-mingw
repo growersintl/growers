@@ -8,8 +8,8 @@ TARGET_PLATFORM:=i686
 DEPSDIR:=/mnt/mxe/usr/$(TARGET_PLATFORM)-w64-mingw32.static
 CC:=/mnt/mxe/usr/bin/$(TARGET_PLATFORM)-w64-mingw32.static-gcc
 CXX:=/mnt/mxe/usr/bin/$(TARGET_PLATFORM)-w64-mingw32.static-g++
-RANLIB=/mnt/mxe/usr/$(TARGET_PLATFORM)-w64-mingw32.static-ranlib
-STRIP=/mnt/mxe/usr/$(TARGET_PLATFORM)-w64-mingw32.static-strip
+RANLIB=/mnt/mxe/usr/bin/$(TARGET_PLATFORM)-w64-mingw32.static-ranlib
+STRIP=/mnt/mxe/usr/bin/$(TARGET_PLATFORM)-w64-mingw32.static-strip
 
 USE_UPNP:=-
 USE_WALLET:=1
