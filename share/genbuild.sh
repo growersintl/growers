@@ -1,4 +1,5 @@
 #!/bin/sh
+# Checks against git
 
 if [ $# -gt 0 ]; then
     FILE="$1"
