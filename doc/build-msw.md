@@ -89,7 +89,7 @@ known as **[MXE](https://mxe.cc/)**). Following these steps you can build your w
    cd /mnt/growers/src/leveldb
    TARGET_OS=OS_WINDOWS_CROSSCOMPILE CC=/mnt/mxe/usr/bin/i686-w64-mingw32.static-gcc \
        CXX=/mnt/mxe/usr/bin/i686-w64-mingw32.static-g++ make libleveldb.a libmemenv.a
-   cd /mnt/growers
+   cd /mnt/growers/src
    ```
 
 10. Build the daemon:
