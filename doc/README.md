@@ -1,7 +1,7 @@
 Growers 1.0.0 BETA
 
-Copyright (c) 2013 NovaCoin Developers
-Copyright (c) 2011-2012 PPCoin Developers
+Copyright (c) 2013 NovaCoin Developers  
+Copyright (c) 2011-2012 PPCoin Developers  
 Copyright (c) 2017-2019 GrowersCoin Developers
 
 Distributed under the MIT/X11 software license, see the accompanying
