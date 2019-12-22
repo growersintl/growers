@@ -5,27 +5,25 @@
 TARGET_PLATFORM:=i686
 #TARGET_PLATFORM:=x86_64
 
-DEPSDIR:=/usr/$(TARGET_PLATFORM)-w64-mingw32
-CC:=$(TARGET_PLATFORM)-w64-mingw32-gcc
-CXX:=$(TARGET_PLATFORM)-w64-mingw32-g++
-RANLIB=$(TARGET_PLATFORM)-w64-mingw32-ranlib
-STRIP=$(TARGET_PLATFORM)-w64-mingw32-strip
+DEPSDIR:=/mnt/mxe/usr/$(TARGET_PLATFORM)-w64-mingw32.static
+CC:=/mnt/mxe/usr/bin/$(TARGET_PLATFORM)-w64-mingw32.static-gcc
+CXX:=/mnt/mxe/usr/bin/$(TARGET_PLATFORM)-w64-mingw32.static-g++
+RANLIB=/mnt/mxe/usr/$(TARGET_PLATFORM)-w64-mingw32.static-ranlib
+STRIP=/mnt/mxe/usr/$(TARGET_PLATFORM)-w64-mingw32.static-strip
 
-USE_UPNP:=0
+USE_UPNP:=-
 USE_WALLET:=1
 
 INCLUDEPATHS= \
  -I"$(CURDIR)" \
  -I"$(CURDIR)"/obj \
- -I"$(DEPSDIR)/boost_1_55_0" \
- -I"$(DEPSDIR)/db-6.0.20/build_unix" \
- -I"$(DEPSDIR)/openssl-1.0.1f/include" \
+ -I"$(DEPSDIR)/include" \
+ -I"$(DEPSDIR)/include/boost" \
+ -I"$(DEPSDIR)/include/openssl" \
  -I"$(DEPSDIR)"
 
 LIBPATHS= \
- -L"$(DEPSDIR)/boost_1_55_0/stage/lib" \
- -L"$(DEPSDIR)/db-6.0.20/build_unix" \
- -L"$(DEPSDIR)/openssl-1.0.1f"
+ -L"$(DEPSDIR)/lib"
 
 LIBS= \
  -l boost_system-mt \

@@ -20,17 +20,17 @@ greaterThan(QT_MAJOR_VERSION, 4) {
 # use: BOOST_THREAD_LIB_SUFFIX=_win32-...
 # or when linking against a specific BerkelyDB version: BDB_LIB_SUFFIX=-4.8
 
-BOOST_LIB_SUFFIX=-mgw48-mt-s-1_55
-BOOST_INCLUDE_PATH=C:/deps/boost_1_55_0
-BOOST_LIB_PATH=C:/deps/boost_1_55_0/stage/lib
-BDB_INCLUDE_PATH=C:/deps/db-4.8.30.NC/build_unix
-BDB_LIB_PATH=C:/deps/db-4.8.30.NC/build_unix
-OPENSSL_INCLUDE_PATH=C:/deps/openssl-1.0.1l/include
-OPENSSL_LIB_PATH=C:/deps/openssl-1.0.1l
-MINIUPNPC_INCLUDE_PATH=C:/deps/
-MINIUPNPC_LIB_PATH=C:/deps/miniupnpc
-QRENCODE_INCLUDE_PATH=C:/deps/qrencode-3.4.3
-QRENCODE_LIB_PATH=C:/deps/qrencode-3.4.3/.libs
+BOOST_LIB_SUFFIX=-mt
+BOOST_INCLUDE_PATH=/mnt/mxe/usr/i686-w64-mingw32.static/include/boost
+BOOST_LIB_PATH=/mnt/mxe/usr/i686-w64-mingw32.static/lib
+OPENSSL_INCLUDE_PATH=/mnt/mxe/usr/i686-w64-mingw32.static/include/openssl
+OPENSSL_LIB_PATH=/mnt/mxe/usr/i686-w64-mingw32.static/lib
+BDB_INCLUDE_PATH=/mnt/mxe/usr/i686-w64-mingw32.static/include
+BDB_LIB_PATH=/mnt/mxe/usr/i686-w64-mingw32.static/lib
+MINIUPNPC_INCLUDE_PATH=/mnt/mxe/usr/i686-w64-mingw32.static/include
+MINIUPNPC_LIB_PATH=/mnt/mxe/usr/i686-w64-mingw32.static/lib
+QRENCODE_INCLUDE_PATH=/mnt/mxe/usr/i686-w64-mingw32.static/include
+QRENCODE_LIB_PATH=/mnt/mxe/usr/i686-w64-mingw32.static/lib
 
 
 # Dependency library locations can be customized with:
