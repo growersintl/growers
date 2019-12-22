@@ -1,4 +1,5 @@
 #!/bin/bash
+# Builds Berkeley DB
 
 export PATH=/mnt/mxe/usr/bin:$PATH
 MXE_PATH=/mnt/mxe

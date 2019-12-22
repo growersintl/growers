@@ -1,4 +1,5 @@
 #!/bin/bash
+# Builds UPnP client
 
 export PATH=/mnt/mxe/usr/bin:$PATH
 MXE_PATH=/mnt/mxe
