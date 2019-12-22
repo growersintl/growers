@@ -21,8 +21,8 @@ legalization, and tools like GrowersCoin will help usher in the future of the ca
 License
 -------
 
-GrowersCoin is released under the terms of the Gnu GPL license.  
-See [COPYING](COPYING) for more information or see https://www.gnu.org/licenses/gpl.txt
+GrowersCoin is released under the terms of the MIT/X11 license.  
+See [COPYING](COPYING) for more information or see http://www.opensource.org/licenses/mit-license.php
 
 Coin specifications
 -------------------
