@@ -112,10 +112,77 @@ known as **[MXE](https://mxe.cc/)**). Following these steps you can build your w
     strip growersd
     ```
 
-You just need to move the `growersd` file to either `/usr/local/bin`,
-`/usr/bin` or any other path you want to run it from.
+If no errors are found, you can find the `growersd.exe` file in the `src` directory,
+and you can get it in your Windows desktop with a file transfer utility like [WinSCP](https://winscp.net/).
+
+Running the daemon
+------------------
+
+Once you have `growersd.exe` on Windows, **don't double click on it**. It doesn't work that way.
+You need to open a command prompt window by pressing Shift and right-clicking on the folder
+where you've placed the daemon (or on the desktop if you put it there),
+then selecting "Open command window here".
+
+**First run**
+
+The first time you run it, you'll have to confirm if you want to trust it both by Windows
+User Access Control and by the firewall. Then you'll get the next output on the command prompt:
+
+```
+C:\Users\John Doe\Desktop>growersd
+Error: To use growersd, you must set a rpcpassword in the configuration file:
+C:\Users\John Doe\AppData\Roaming\Growers\growers.conf
+It is recommended you use the following random password:
+rpcuser=growersrpc
+rpcpassword=2oArpDDHp3aVdoJbrV8qfTnfxuFNHnR1AjjhB21MMnSG
+(you do not need to remember this password)
+The username and password MUST NOT be the same.
+If the file does not exist, create it with owner-readable-only file permissions.
+
+It is also recommended to set alertnotify so you are notified of problems;
+for example: alertnotify=echo %s | mail -s "Growers Alert" admin@foo.com
+```
+
+You'll need to open the notepad and type the `rpcuser` and `rpcpassword` lines into it:
+
+```
+rpcuser=growersrpc
+rpcpassword=2oArpDDHp3aVdoJbrV8qfTnfxuFNHnR1AjjhB21MMnSG
+```
+
+Then save it as specified (`C:\Users\John Doe\AppData\Roaming\Growers\growers.conf`).
+**Make sure you save it as `growers.conf`** because the Notepad might save it as `growers.conf.txt`.
+
+**Make a "start" and a "stop" scripts**
+
+Create a new text file and paste the next contents:
+
+```vbscript
+Set objShell = WScript.CreateObject("WScript.Shell")
+objShell.Run "growersd.exe", 0, false
+MsgBox "GrowersCoin is running now. If you want to stop it, run the 'Stop daemon' script."
+```
+
+Save it as `Start Daemon.vbs` in the same folder as `growersd.exe`.
+
+Then create a new text file and paste the next contents:
+
+```bat
+@echo off
+growersd stop
+```
+
+And save it as `Stop daemon.cmd` in the same folder as `growersd`.
+
+Finally, whenever you want to access the daemon from the command line, open a command prompt window
+on the folder where the daemon is located by pressing Shift and right clicking on the folder
+window, then selecting "Open command window here".
+
+Daemon commands
+---------------
 
 For a list of command-line options, run:
+
 ```sh
 growersd --help
 ```
