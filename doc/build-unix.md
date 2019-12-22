@@ -1,30 +1,17 @@
-Copyright (c) 2009-2012 Bitcoin Developers
-Copyright (c) 2017-2019 GrowersCoin Developers
-
-Distributed under the MIT/X11 software license, see the accompanying
-file license.txt or http://www.opensource.org/licenses/mit-license.php.
-This product includes software developed by the OpenSSL Project for use in
-the OpenSSL Toolkit (http://www.openssl.org/).  This product includes
-cryptographic software written by Eric Young (eay@cryptsoft.com) and UPnP
-software written by Thomas Bernard.
-
-
-UNIX BUILD NOTES
+Unix build notes
 ================
 
-To Build
---------
+*These instructions are to build the GrowersCoin headless executable.
+If you want to build the graphical user interface,
+see [readme-qt.md](readme-qt.md) for instructions on building
+the Qt desktop wallet.*
 
-```sh
-cd src/
-make -f makefile.unix            # Headless growersd
-```
+> We strongly recommend you to build an Ubuntu 16 Server on VirtualBox or VMWare Player.  
+> Give it at least two cores, 4 GB of RAM and 20 GB on disk. 4GB RAM and 4 cores work better.
 
-See readme-qt.rst for instructions on building Growers QT,
-the graphical growers.
 
 Dependencies
-------------
+============
 
 ```
 Library     Purpose           Description
@@ -33,119 +20,73 @@ libssl      SSL Support       Secure communications
 libdb       Berkeley DB       Blockchain & wallet storage
 libboost    Boost             C++ Library
 miniupnpc   UPnP Support      Optional firewall-jumping support
-libqrencode QRCode generation Optional QRCode generation
 ```
     
-Note that libexecinfo should be installed, if you building under *BSD systems. 
-This library provides backtrace facility.
-
-miniupnpc may be used for UPnP port mapping.  It can be downloaded from
-http://miniupnp.tuxfamily.org/files/.  UPnP support is compiled in and
-turned off by default.  Set USE_UPNP to a different value to control this:
-
-```
- USE_UPNP=-    No UPnP support - miniupnp not required
- USE_UPNP=0    (the default) UPnP support turned off by default at runtime
- USE_UPNP=1    UPnP support turned on by default at runtime
-```
-
-`libqrencode` may be used for QRCode image generation. It can be downloaded
-from http://fukuchi.org/works/qrencode/index.html.en, or installed via
-your package manager. Set `USE_QRCODE` to control this:
-
-```
- USE_QRCODE=0   (the default) No QRCode support - libqrcode not required
- USE_QRCODE=1   QRCode support enabled
-```
-
 Licenses of statically linked libraries:
+
 ```
- Berkeley DB   New BSD license with additional requirement that linked
-               software must be free open source
- Boost         MIT-like license
- miniupnpc     New (3-clause) BSD license
+Berkeley DB   New BSD license with additional requirement that linked
+              software must be free open source
+Boost         MIT-like license
+miniupnpc     New (3-clause) BSD license
 ```
 
-Versions used in this release:
+The current GrowersCoin release was built on an **Ubuntu 16 server** using the next package versions:
+
 ```
- GCC           4.9.0
- OpenSSL       1.0.1g
- Berkeley DB   5.3.28.NC
- Boost         1.55.0
- miniupnpc     1.9.20140401
+ GCC           5.4.0
+ OpenSSL       1.0.2g
+ Berkeley DB   5.3.21
+ Boost         1.58.0
+ miniupnpc     1.9.20140610
 ```
+
+The `growersd` binary has been built **static** so it can be used on any OS that has
+GLIBC 2.26 or better.
 
 Dependency Build Instructions: Ubuntu & Debian
 ----------------------------------------------
 
 ```sh
-sudo apt-get install build-essential
-sudo apt-get install libssl-dev
-sudo apt-get install libdb++-dev
-sudo apt-get install libboost-all-dev
-sudo apt-get install libqrencode-dev
+sudo apt-get install build-essential libssl-dev libdb++-dev libboost-all-dev libminiupnpc-dev
 ```
 
-If using Boost 1.37, append `-mt` to the boost libraries in the makefile.
+Build the GrowersCoin daemon
+----------------------------
 
+**Note:** `miniupnpc` may be used for UPnP port mapping.  It can be downloaded from
+http://miniupnp.tuxfamily.org/files/.  UPnP support is compiled in and
+turned off by default.  Set `USE_UPNP` to a different value to control this:
 
-Dependency Build Instructions: Gentoo
--------------------------------------
+To build without UPnP support (default), just build without parameters:
 
 ```sh
-emerge -av1 --noreplace boost openssl sys-libs/db
+make -f makefile.unix
 ```
 
-Take the following steps to build (no UPnP support):
+To build with UPnP disabled by default:
 
 ```sh
- cd ${GROWERS_DIR}/src
- make -f makefile.unix USE_UPNP=
- strip growersd
+make -f makefile.unix USE_UPNP=0
 ```
 
-Notes
------
-
-The release is built with GCC and then "strip growersd" to strip the debug
-symbols, which reduces the executable size by about 90%.
-
-
-miniupnpc
----------
+To build with UPnP enabled by default:
 
 ```sh
-tar -xzvf miniupnpc-1.6.tar.gz
-cd miniupnpc-1.6
-make
-sudo su
-make install
+make -f makefile.unix USE_UPNP=1
 ```
 
+Note: If you want to make a static binary (no requirements) add `STATIC=1` to the `make` command.
 
-Berkeley DB
------------
-
-You need Berkeley DB. If you have to build Berkeley DB yourself:
+Once the compilation ends, strip the file:
 
 ```sh
-../dist/configure --enable-cxx
-make
+strip growersd
 ```
 
-Boost
------
 
-If you need to build Boost yourself:
-
-```sh
-sudo su
-./bootstrap.sh
-./bjam install
-```
-
-Security
---------
+Security notes
+--------------
 
 To help make your growers installation more secure by making certain attacks impossible to
 exploit even if a vulnerability is found, you can take the following measures:
@@ -198,3 +139,17 @@ exploit even if a vulnerability is found, you can take the following measures:
     ```
     
     The `GPH RW-` means that the stack is readable and writeable but not executable.
+
+
+Copyright information
+=====================
+
+Copyright (c) 2009-2012 Bitcoin Developers  
+Copyright (c) 2017-2019 GrowersCoin Developers
+
+Distributed under the MIT/X11 software license, see the accompanying file
+license.txt or http://www.opensource.org/licenses/mit-license.php.  This
+product includes software developed by the OpenSSL Project for use in the
+OpenSSL Toolkit (http://www.openssl.org/).  This product includes cryptographic
+software written by Eric Young (eay@cryptsoft.com) and UPnP software written by
+Thomas Bernard.
