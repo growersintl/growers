@@ -46,9 +46,9 @@ Building the wallet
 The following are developer notes on how to build GrowersCoin on your native platform.
 They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
-* [Unix Build Notes](doc/build-unix.txt)
-* [Windows Build Notes](doc/build-msw.txt)
-* [OSX Build Notes](doc/build-osx.txt)
+* [Unix Build Notes](doc/build-unix.md)
+* [Windows Build Notes](doc/build-msw.md)
+* [OSX Build Notes](doc/build-osx.md)
 
 Development process
 -------------------

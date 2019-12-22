@@ -7,7 +7,7 @@ cryptographic software written by Eric Young (eay@cryptsoft.com) and UPnP
 software written by Thomas Bernard.
 
 
-See readme-qt.txt for instructions on building Growers QT, the
+See readme-qt.md for instructions on building Growers QT, the
 graphical user interface.
 
 WINDOWS BUILD NOTES
