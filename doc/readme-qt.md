@@ -13,17 +13,31 @@ First, make sure that the required packages for Qt5 development of your
 distribution are installed, for Debian and Ubuntu these are:
 
 ```sh
-apt-get install qt5-default qt5-qmake qtbase5-dev-tools qttools5-dev-tools \
-    build-essential libboost-dev libboost-system-dev \
-    libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev \
-    libssl-dev libdb++-dev libminiupnpc-dev
+sudo apt-get install build-essential libssl-dev libdb++-dev libboost-all-dev libminiupnpc-dev qt4-default
 ```
 
-then execute the following:
+You'll need to download the libqrcode package and build it enabling the static mode or the wallet wont compile:
 
-```
-qmake
+```sh
+sudo su
+cd /usr/src
+apt-get install -y autoconf automake autotools-dev libtool pkg-config libpng12-dev
+wget https://fukuchi.org/works/qrencode/qrencode-4.0.2.tar.gz
+tar zxvf qrencode-4.0.2.tar.gz
+cd qrencode-4.0.2
+./configure --enable-static
 make
+make install
+ldconfig
+exit
+```
+
+Then execute the following:
+
+```
+qmake USE_UPNP=1 USE_QRCODE=1 RELEASE=1
+make
+strip growers-qt
 ```
 
 Alternatively, install Qt Creator and open the `growers-qt.pro` file.
