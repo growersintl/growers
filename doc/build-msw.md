@@ -158,9 +158,18 @@ Then save it as specified (`C:\Users\John Doe\AppData\Roaming\Growers\growers.co
 Create a new text file and paste the next contents:
 
 ```vbscript
-Set objShell = WScript.CreateObject("WScript.Shell")
-objShell.Run "growersd.exe", 0, false
-MsgBox "GrowersCoin is running now. If you want to stop it, run the 'Stop daemon' script."
+Set shl = WScript.CreateObject("WScript.Shell")
+Set fso = CreateObject("Scripting.FileSystemObject")
+Set shl = CreateObject("WScript.Shell")
+
+path = shl.ExpandEnvironmentStrings("%appdata%") & "\growers"
+
+if ( fso.FolderExists(path) ) then 
+    shl.Run "growersd.exe", 0, false
+    MsgBox "GrowersCoin is running now. If you want to stop it, run the 'Stop daemon' script."
+else
+    MsgBox "Data directory not found. Please run growersd from a command prompt and follow instructions."
+end if
 ```
 
 Save it as `Start Daemon.vbs` in the same folder as `growersd.exe`.
@@ -177,6 +186,9 @@ And save it as `Stop daemon.cmd` in the same folder as `growersd`.
 Finally, whenever you want to access the daemon from the command line, open a command prompt window
 on the folder where the daemon is located by pressing Shift and right clicking on the folder
 window, then selecting "Open command window here".
+
+> The start/stop scripts mentioned above are included in the distribution package.
+> Please check the [Distribution helpers](../contrib/dist_helpers/README.md)] for more information.
 
 Daemon commands
 ---------------
