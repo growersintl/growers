@@ -4,7 +4,7 @@ Windows build instructions
 
 *These instructions are to build the GrowersCoin headless executable.
 If you want to build the graphical user interface,
-see [readme-qt.md](readme-qt.md) for instructions on building
+see [readme-qt-win.md](readme-qt-win.md) for instructions on building
 the Qt desktop wallet.*
 
 

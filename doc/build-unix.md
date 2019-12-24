@@ -3,7 +3,7 @@ Unix build notes
 
 *These instructions are to build the GrowersCoin headless executable.
 If you want to build the graphical user interface,
-see [readme-qt.md](readme-qt.md) for instructions on building
+see [readme-qt-unix.md](readme-qt-unix.md) for instructions on building
 the Qt desktop wallet.*
 
 > We strongly recommend you to build an Ubuntu 16 Server on VirtualBox or VMWare Player.  

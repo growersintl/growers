@@ -46,9 +46,15 @@ Building the wallet
 The following are developer notes on how to build GrowersCoin on your native platform.
 They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
+### Daemon binary (headless client, for service-centric nodes):
 * [Unix Build Notes](doc/build-unix.md)
 * [Windows Build Notes](doc/build-msw.md)
 * [OSX Build Notes](doc/build-osx.md)
+
+### Desktop wallet (with user interface):
+* [Unix Build Notes](doc/readme-qt-unix.md)
+* [Windows Build Notes](doc/readme-qt-win.md)
+* [OSX Build Notes](doc/readme-qt-osx.md)
 
 Development process
 -------------------

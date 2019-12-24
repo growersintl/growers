@@ -3,7 +3,7 @@ Mac OSX build instructions
 
 *These instructions are to build the GrowersCoin headless executable.
 If you want to build the graphical user interface,
-see [readme-qt.md](readme-qt.md) for instructions on building
+see [readme-qt-osx.md](readme-qt-osx.md) for instructions on building
 the Qt desktop wallet.*
 
 The commands in this guide should be executed in a Terminal application.
