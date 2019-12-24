@@ -24,6 +24,11 @@ License
 GrowersCoin is released under the terms of the MIT/X11 license.  
 See [COPYING](COPYING) for more information or see http://www.opensource.org/licenses/mit-license.php
 
+Changes
+-------
+
+Please check the [Changelog](CHANGELOG.md) for full information.
+
 Coin specifications
 -------------------
 

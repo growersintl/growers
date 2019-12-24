@@ -1,4 +1,4 @@
-Growers 1.0.0 BETA
+Growers 1.2.1 BETA
 
 Copyright (c) 2013 NovaCoin Developers  
 Copyright (c) 2011-2012 PPCoin Developers  
