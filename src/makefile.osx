@@ -7,20 +7,23 @@
 # Originally by Laszlo Hanyecz (solar@heliacal.net)
 
 #CXX=llvm-g++
-CC=gcc-mp-4.9
-CXX=g++-mp-4.9
+#CC=gcc-mp-4.9
+#CXX=g++-mp-4.9
 
 DEPSDIR=/opt/local
+AUXDIR=$(HOME)/Devel/build
 
 INCLUDEPATHS= \
  -I"$(CURDIR)" \
  -I"$(CURDIR)"/obj \
- -I"$(DEPSDIR)/include" \
- -I"$(DEPSDIR)/include/db48"
+ -I"$(DEPSDIR)/include/db48" \
+ -I"$(AUXDIR)/include" \
+ -I"$(DEPSDIR)/include"
 
 LIBPATHS= \
- -L"$(DEPSDIR)/lib" \
- -L"$(DEPSDIR)/lib/db48"
+ -L"$(DEPSDIR)/lib/db48" \
+ -L"$(AUXDIR)/lib" \
+ -L"$(DEPSDIR)/lib"
 
 USE_UPNP:=1
 USE_WALLET:=1
@@ -31,20 +34,20 @@ ifdef STATIC
 # Build STATIC if you are redistributing the growersd binary
 LIBS += \
  $(DEPSDIR)/lib/db48/libdb_cxx-4.8.a \
- $(DEPSDIR)/lib/libboost_system-mt.a \
- $(DEPSDIR)/lib/libboost_filesystem-mt.a \
- $(DEPSDIR)/lib/libboost_program_options-mt.a \
- $(DEPSDIR)/lib/libboost_thread-mt.a \
- $(DEPSDIR)/lib/libssl.a \
- $(DEPSDIR)/lib/libcrypto.a \
+ $(AUXDIR)/lib/libboost_system.a \
+ $(AUXDIR)/lib/libboost_filesystem.a \
+ $(AUXDIR)/lib/libboost_program_options.a \
+ $(AUXDIR)/lib/libboost_thread.a \
+ $(AUXDIR)/lib/libssl.a \
+ $(AUXDIR)/lib/libcrypto.a \
  -lz
 else
 LIBS += \
  -ldb_cxx-4.8 \
- -lboost_system-mt \
- -lboost_filesystem-mt \
- -lboost_program_options-mt \
- -lboost_thread-mt \
+ -lboost_system \
+ -lboost_filesystem \
+ -lboost_program_options \
+ -lboost_thread \
  -lssl \
  -lcrypto \
  -lz
@@ -119,7 +122,7 @@ endif
 ifneq (${USE_UPNP}, -)
 	DEFS += -DUSE_UPNP=$(USE_UPNP)
 ifdef STATIC
-	LIBS += $(DEPSDIR)/lib/libminiupnpc.a
+	LIBS += $(AUXDIR)/lib/libminiupnpc.a
 else
 	LIBS += -lminiupnpc
 endif
