@@ -14,6 +14,7 @@ MXE_LIB_PATH=/mnt/mxe/usr/i686-w64-mingw32.static/lib
 $MXE_PATH/i686-w64-mingw32.static-qmake-qt4 \
   USE_QRCODE=1 \
   USE_UPNP=1 \
+  RELEASE=1 \
   BOOST_LIB_SUFFIX=-mt \
   BOOST_THREAD_LIB_SUFFIX=_win32-mt \
   BOOST_INCLUDE_PATH=$MXE_INCLUDE_PATH/boost \
