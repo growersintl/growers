@@ -16,7 +16,7 @@ distribution are installed, for Debian and Ubuntu these are:
 sudo apt-get install build-essential libssl-dev libdb++-dev libboost-all-dev libminiupnpc-dev qt4-default
 ```
 
-You'll need to download the libqrcode package and build it enabling the static mode or the wallet wont compile:
+You'll need to download the `libqrcode` package and build it enabling the static mode or the wallet wont compile:
 
 ```sh
 sudo su
@@ -35,12 +35,10 @@ exit
 Then execute the following:
 
 ```
-qmake USE_UPNP=1 USE_QRCODE=1 RELEASE=1
+qmake growers-qt.pro USE_UPNP=1 USE_QRCODE=1 RELEASE=1
 make
 strip growers-qt
 ```
-
-Alternatively, install Qt Creator and open the `growers-qt.pro` file.
 
 An executable named `growers-qt` will be built.
 
@@ -377,8 +375,6 @@ To use UPnP for port forwarding behind a NAT router (recommended, as more connec
 ```sh
 qmake "USE_UPNP=1"
 ```
-
-(in **Qt Creator**, you can find the setting for additional qmake arguments under "Projects" -> "Build Settings" -> "Build Steps", then click "Details" next to **qmake**)
 
 This requires miniupnpc for UPnP port mapping.  It can be downloaded from
 http://miniupnp.tuxfamily.org/files/.  UPnP support is not compiled in by default.
